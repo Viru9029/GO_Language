@@ -1,0 +1,6 @@
+#convert string to byte
+	str := "hello"
+	a := make([]byte, len(str))
+	copy(a, str)
+	fmt.Println(a)
+
