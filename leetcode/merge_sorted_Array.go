@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func merge(nums1 []int, m int, nums2 []int, n int) {
+func merge(nums1 []int, m int, nums2 []int, n int) []int {
 	m--
 	n--
 
@@ -15,6 +15,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 			m--
 		}
 	}
+	return nums1
 }
 
 func main() {

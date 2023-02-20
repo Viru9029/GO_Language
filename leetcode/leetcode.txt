@@ -273,3 +273,181 @@ func main() {
 	fmt.Println(reverseString(a))
 }
 
+11.longest commom prefix
+package main
+
+import (
+	"fmt"
+)
+
+func longestCommonPrefix(strs []string) string {
+	for index, val := range strs[0] {
+		for _, j := range strs[1:] {
+			if index == len(j) || byte(val) != j[index] {
+				return strs[0][:index]
+			}
+		}
+	}
+	return strs[0]
+}
+
+func main() {
+	a := []string{"flower", "flow", "flight"}
+	fmt.Println(longestCommonPrefix(a))
+}
+
+
+12.merged sorted array
+package main
+
+import "fmt"
+
+func merge(nums1 []int, m int, nums2 []int, n int) []int {
+	m--
+	n--
+
+	for i := m + n + 1; i >= 0 && n >= 0; i-- {
+		if m < 0 || nums1[m] < nums2[n] {
+			nums1[i] = nums2[n]
+			n--
+		} else {
+			nums1[i] = nums1[m]
+			m--
+		}
+	}
+	return nums1
+}
+
+func main() {
+	a := []int{1, 2, 3, 0, 0, 0}
+	b := 3
+	c := []int{2, 5, 6}
+	d := 3
+	fmt.Println(merge(a, b, c, d))
+}
+
+
+13.power of two
+package main
+
+import "fmt"
+
+func isPowerOfTwo(n int) bool {
+	if n == 1 {
+		return true
+	} else if n < 1 {
+		return false
+	}
+	for n > 1 {
+		if n%2 == 1 {
+			return false
+		}
+		n = n / 2
+	}
+	return true
+}
+
+func main() {
+	n := 42
+	fmt.Println(isPowerOfTwo(n))
+}
+
+
+
+14.power of three
+package main
+
+import "fmt"
+
+func isPowerOfThree(n int) bool {
+	if n < 1 {
+		return false
+	}
+	for n > 1 {
+		if n%3 == 1 || n%3 == 2 {
+			return false
+		}
+		n = n / 3
+	}
+	return true
+}
+
+func main() {
+	n := 27
+	fmt.Println(isPowerOfThree(n))
+}
+
+
+15.power of four
+package main
+
+import "fmt"
+
+func isPowerOfFour(n int) bool {
+	if n < 1 {
+		return false
+	}
+	for n > 1 {
+		if n%4 == 1 || n%4 == 2 || n%4 == 3 {
+			return false
+		}
+		n = n / 4
+	}
+	return true
+}
+
+func main() {
+	n := 16
+	fmt.Println(isPowerOfFour(n))
+}
+
+
+16.fibonacci Number 
+package main
+
+import "fmt"
+
+func fib(n int) int {
+	if n <= 0 {
+		return 0
+	} else if n == 1 || n == 2 {
+		return 1
+	} else {
+		return (fib(n-1) + fib(n-2))
+	}
+
+}
+
+func main() {
+	n := 25
+	fmt.Println(fib(n))
+}
+
+17.fizz_Buzz
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func fizzBuzz(n int) []string {
+	res := []string{}
+	for i := 1; i < n+1; i++ {
+		if i%3 == 0 && i%5 == 0 {
+			res = append(res, "FizzBuzz")
+		} else if i%3 == 0 {
+			res = append(res, "Fizz")
+		} else if i%5 == 0 {
+			res = append(res, "Buzz")
+		} else {
+			res = append(res, strconv.Itoa(i))
+		}
+	}
+	return res
+}
+
+func main() {
+	n := 15
+	fmt.Println(fizzBuzz(n))
+}
