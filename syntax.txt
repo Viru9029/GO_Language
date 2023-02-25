@@ -4,3 +4,37 @@
 	copy(a, str)
 	fmt.Println(a)
 
+func checkNilError(err error){
+    if err != nil{
+        panic(err)
+    }
+}
+
+sort.Ints(nums1)
+sort.Ints(nums2)
+
+
+func mostWordsFound(sentences []string) int {
+    Max_length:= len(strings.Split(sentences[0]," "))
+    for _,val := range sentences {
+        length:=len(strings.Split(val," "))
+        if length > Max_length {
+            Max_length = length
+        }
+    }
+    return Max_length    
+}
+
+string to int
+intVar, err := strconv.Atoi(strVar)
+
+int to string
+s2 := strconv.Itoa(i)
+
+
+func trim(s string) string {
+    result := strings.TrimSpace(s)
+    regex := regexp.MustCompile("\\s+")
+    result = regex.ReplaceAllString(result, " ")
+    return result
+}

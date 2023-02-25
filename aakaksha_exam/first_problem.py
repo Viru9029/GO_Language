@@ -1,5 +1,4 @@
-def make_zigzag(arr):
-    n = len(arr)
+def make_zigzag(n,arr):
     replacements = 0
     for i in range(1, n, 2):
         if arr[i] >= arr[i-1]:
@@ -18,4 +17,4 @@ def make_zigzag(arr):
     return replacements
 
 
-print(make_zigzag([2,1,2,3,4,5,2,9]))
+print(make_zigzag(8,[2,1,2,3,4,5,2,9]))

@@ -9,10 +9,10 @@ def pairs(k, arr):
             counter +=1
         stack.add(k + arr[i])
 
-    return counter
+    return counter -1
 
 
-print(pairs(4,[1,3,2,0]))
+print(pairs(2,[1,3,2,0]))
 
 
 # if __name__ == '__main__':
